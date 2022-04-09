@@ -2,7 +2,8 @@
 let {tutorialList} = Astro.props;
 let {text, articles} = {...tutorialList}
 
-console.log(tutorialList)
+let allTags = [...new Set(articles.map(article => article.frontmatter.tags).flat().map(tag => tag?tag.text:""))].filter(tag => tag)
+console.log(allTags)
 ---
 
 <section class="relative">
@@ -11,25 +12,22 @@ console.log(tutorialList)
             <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
                 <h1 class="h1">{text}</h1>
             </div>
-            <div class="border-b border-gray-300 pb-4 mb-12">
-                <ul class="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
-                    <li class="mx-5 my-1">
-                        <a class="text-blue-600" href="#0">All</a>
-                    </li>
-                    <li class="mx-5 my-1">
-                        <a class="text-gray-800 hover:underline" href="#0">Tutorials</a>
-                    </li>
-                    <li class="mx-5 my-1">
-                        <a class="text-gray-800 hover:underline" href="#0">Tips & Tricks</a>
-                    </li>
-                    <li class="mx-5 my-1">
-                        <a class="text-gray-800 hover:underline" href="#0">Free ebooks</a>
-                    </li>
-                    <li class="mx-5 my-1">
-                        <a class="text-gray-800 hover:underline" href="#0">Guides</a>
-                    </li>
-                </ul>
-            </div>
+            {allTags.length > 0 &&
+                <div class="border-b border-gray-300 pb-4 mb-12">
+                    <ul class="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
+                        {allTags.length > 1 &&
+                            <li class="mx-5 my-1">
+                                <a class="text-gray-800 hover:underline" href="#0">All</a>
+                            </li>
+                        }
+                        {allTags.map(tag => (
+                            <li class="mx-5 my-1">
+                                <a class="text-gray-800 hover:underline" href="#0">{tag}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            }
             <div class="max-w-sm mx-auto md:max-w-none">
                 <div class="grid gap-12 md:grid-cols-3 md:gap-x-6 md:gap-y-8 items-start">
                     {articles.map(article => (
@@ -40,34 +38,38 @@ console.log(tutorialList)
                                         <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="/cruip-simple/images/tutorial-01.jpg" width="352" height="198" alt="News 01" />
                                     </figure>
                                 </a>
-                                <div class="mb-3">
-                                    <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                        {article.tags.map(tag => (
-                                            <li class="m-1">
-                                                <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">{tag.text}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                {article.frontmatter.tags &&
+                                    <div class="mb-3">
+                                        <ul class="flex flex-wrap text-xs font-medium -m-1">
+                                            {article.frontmatter.tags.map(tag => (
+                                                <li class="m-1">
+                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">{tag.text}</a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                }
                                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                    <a class="hover:underline" href="blog-post.html">{article.text}</a>
+                                    <a class="hover:underline" href="blog-post.html">{article.frontmatter.text}</a>
                                 </h3>
                             </header>
-                            <p class="text-gray-600 grow">{article.subtext}</p>
-                            <footer class="text-sm flex items-center mt-4">
-                                <div class="flex shrink-0 mr-3">
-                                    {article.authors.map(author => (
-                                        <a class="relative" href="#0">
-                                            <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                            <img class="relative rounded-full" src={author.image} width="32" height="32" alt={author.alt} />
-                                        </a>
-                                    ))}
-                                </div>
-                                <div>
-                                    <span class="text-gray-600">By </span>
-                                    <a class="font-medium hover:underline" href="#0">Lisa Allison</a> & <a class="font-medium hover:underline" href="#0">Justin Park</a>
-                                </div>
-                            </footer>
+                            <p class="text-gray-600 grow">{article.frontmatter.subtext}</p>
+                            {article.frontmatter.authors &&
+                                <footer class="text-sm flex items-center mt-4">
+                                    <div class="flex shrink-0 mr-3">
+                                        {article.frontmatter.authors.map(author => (
+                                            <a class="relative" href="#0">
+                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
+                                                <img class="relative rounded-full" src={author.image} width="32" height="32" alt={author.alt} />
+                                            </a>
+                                        ))}
+                                    </div>
+                                    <div>
+                                        <span class="text-gray-600">By </span>
+                                        <a class="font-medium hover:underline" href="#0">Lisa Allison</a> & <a class="font-medium hover:underline" href="#0">Justin Park</a>
+                                    </div>
+                                </footer>
+                            }
                         </article>
                     ))}
                 </div>
