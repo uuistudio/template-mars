@@ -1,0 +1,9 @@
+---
+import BlogListArticleSummary from "./blog-list-article-summary.astro"
+
+let {posts} = Astro.props
+---
+
+<div class="md:grow -mt-4">
+    {posts.map(post => <BlogListArticleSummary {post}/>)}
+</div>

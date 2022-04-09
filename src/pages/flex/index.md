@@ -1,5 +1,5 @@
 ---
-layout: ../flex/html/index.astro
+layout: ../../flex/html/index.astro
 hero:
     tag: Header
     text: Lorem ipsum dolor sit amet.

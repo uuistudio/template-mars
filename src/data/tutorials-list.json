@@ -1,0 +1,29 @@
+{
+  "text":"Tutorials & guides for using Simple with any project",
+  "articles":[
+    {
+      "tags":[
+        {
+
+        }
+      ],
+      "authors":[
+        {
+          "tags":[
+            {
+              "text":"Guides"
+            },
+            {
+              "text":"Guides"
+            },
+            {
+              "text":"Guides"
+            }
+          ]
+        }
+      ],
+      "text":"Making component design decisions in React",
+      "subtext":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+    }
+  ]
+}

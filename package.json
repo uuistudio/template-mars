@@ -10,6 +10,15 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.1.0",
-    "astro": "^1.0.0-beta.5"
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "astro": "^1.0.0-beta.5",
+    "postcss-import": "^14.1.0",
+    "postcss-scss": "^4.0.3",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "aos": "^2.3.4"
   }
 }

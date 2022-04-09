@@ -1,0 +1,47 @@
+---
+import '../../cruip-simple/styles/global.css';
+import Header from '../../cruip-simple/components/header.astro';
+import Footer from '../../cruip-simple/components/footer.astro';
+import PricingTables from '../../cruip-simple/components/pricing-tables.astro';
+import FeaturesTable from '../../cruip-simple/components/features-table.astro';
+import TestimonialsCarousel from '../../cruip-simple/components/testimonials-carousel.astro';
+import Faqs from '../../cruip-simple/components/faqs.astro';
+import Cta from '../../cruip-simple/components/cta.astro';
+---
+  
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pricing - Simple Demo</title>
+</head>
+
+<body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+
+    <!-- Page wrapper -->
+    <div class="flex flex-col min-h-screen overflow-hidden">
+
+        <!-- Site header -->
+        <Header />
+
+        <!-- Page content -->
+        <main class="grow">
+            
+            <!-- Page sections -->
+            <PricingTables />
+            <FeaturesTable />
+            <TestimonialsCarousel />
+            <Faqs />
+            <Cta />
+
+        </main>
+
+        <!-- Site footer -->
+        <Footer />
+
+    </div>
+
+</body>
+
+</html>

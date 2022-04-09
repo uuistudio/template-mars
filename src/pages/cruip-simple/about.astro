@@ -1,0 +1,51 @@
+---
+import '../../cruip-simple/styles/global.css';
+import Header from '../../cruip-simple/components/header.astro';
+import Footer from '../../cruip-simple/components/footer.astro';
+import AboutIntro from '../../cruip-simple/components/about-intro.astro';
+import AboutStory from '../../cruip-simple/components/about-story.astro';
+import Stats from '../../cruip-simple/components/stats.astro';
+import Team from '../../cruip-simple/components/team.astro';
+import Career from '../../cruip-simple/components/career.astro';
+import Process from '../../cruip-simple/components/process.astro';
+import CtaAlternative from '../../cruip-simple/components/cta-alternative.astro';
+---
+  
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About - Simple Demo</title>
+</head>
+
+<body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+
+    <!-- Page wrapper -->
+    <div class="flex flex-col min-h-screen overflow-hidden">
+
+        <!-- Site header -->
+        <Header />
+
+        <!-- Page content -->
+        <main class="grow">
+
+            <!-- Page sections -->
+            <AboutIntro />
+            <AboutStory />
+            <Stats />
+            <Team />
+            <Career />
+            <Process />
+            <CtaAlternative />
+
+        </main>
+
+        <!-- Site footer -->
+        <Footer />
+
+    </div>
+
+</body>
+
+</html>
