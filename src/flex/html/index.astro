@@ -1,0 +1,17 @@
+---
+import Wrap from "./wrap.astro"
+import Hero from "../components/hero.astro"
+import FeatureRight from "../components/feature-right.astro"
+import FeatureLeft from "../components/feature-left.astro"
+import Signup from "../components/signup.astro"
+
+const {content} = Astro.props
+let {hero, featureLeft, featureRight} = {...content}
+---
+
+<Wrap>
+  <Hero {hero}/>
+  <!-- <FeatureRight/>
+  <FeatureLeft/> -->
+  <Signup/>
+</Wrap>

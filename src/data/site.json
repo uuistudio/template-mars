@@ -1,0 +1,20 @@
+{
+    "menu":[
+        {
+            "text":"About",
+            "href":"/about"
+        },
+        {
+            "text":"Apps",
+            "href":"/apps"
+        },
+        {
+            "text":"Pricing",
+            "href":"/pricing"
+        },
+        {
+            "text":"Testimonials",
+            "href":"/testimonials"
+        }
+    ]
+}

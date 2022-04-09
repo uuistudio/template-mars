@@ -1,0 +1,41 @@
+---
+const {hero} = Astro.props
+let {tag, text, subtext, buttonLeft, buttonRight, bottomText, bottomImages, right} = {...hero}
+---
+
+    <section class="relative bg-white overflow-hidden" style="background-image: url('/flex/assets/flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
+      <div class="relative pt-16 md:pt-24 pb-20 md:pb-28 lg:pb-56">
+        <div class="container px-4 mx-auto">
+          <div class="relative z-10 flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-12 md:mb-0">
+              <span class="inline-block py-px px-2 mb-4 text-xs leading-5 text-white bg-green-500 uppercase rounded-9xl">{tag}</span>
+              <h1 class="mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight text-coolGray-900 font-bold tracking-tight">{text}</h1>
+              <p class="mb-8 text-lg md:text-xl text-coolGray-500 font-medium">{subtext}</p>
+              <div class="flex flex-wrap mb-8 md:mb-16">
+                <div class="w-full md:w-auto py-1 md:py-0 md:mr-4"><a class="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm" href="#">{buttonLeft}</a></div>
+                <div class="w-full md:w-auto py-1 md:py-0"><a class="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-coolGray-800 font-medium text-center bg-white hover:bg-coolGray-100 focus:ring-2 focus:ring-coolGray-200 focus:ring-opacity-50 rounded-md shadow-sm" href="#">{buttonRight}</a></div>
+              </div>
+              <p class="mb-6 md:mb-4 text-sm text-coolGray-400 font-medium text-center md:text-left">{bottomText}</p>
+              <div class="flex flex-wrap -mx-3">
+                {bottomImages.map(item => 
+                  <div class="w-full md:w-auto px-3 mb-6 lg:mb-0">
+                    <img class="mx-auto" src={item.src} alt={item.alt}>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div class="w-full md:hidden px-4">
+              <div class="relative max-w-max mx-auto">
+                <img class="absolute p-1 ml-11 top-1 left-0 z-10 h-52 object-cover" src="/flex/assets/flex-ui-assets/elements/dashboard.png">
+                <img class="h-56 mx-auto object-cover" src="/flex/assets/flex-ui-assets/images/headers/mockup-light1.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:absolute md:-right-80 md:top-1/2 md:transform md:-translate-y-1/2 md:translate-x-64 lg:translate-x-32 xl:-translate-x-7 md:mt-12 hidden md:block">
+          <img class="absolute left-12 top-1/2 transform -translate-y-64" src="/flex/assets/flex-ui-assets/elements/circle4-yellow.svg" alt="">
+          <img class="relative z-10" src="/flex/assets/flex-ui-assets/images/headers/mockup-light2.png" alt="">
+          <img class="absolute z-20 top-6 left-36 transform translate-x-4" src={right.image} alt={right.alt}>
+        </div>
+      </div>
+    </section>

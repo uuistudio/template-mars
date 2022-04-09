@@ -1,0 +1,16 @@
+---
+import Base from "./base.astro"
+import Navbar from "../components/navbar.astro"
+import Footer from "../components/footer.astro"
+
+import Site from "../../data/site.json"
+let {menu} = {...Site}
+---
+
+<Base>
+    <Navbar {menu}/>
+
+    <slot/>
+
+    <Footer/>
+</Base>
