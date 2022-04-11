@@ -3,6 +3,7 @@ module.exports = {
     presets: [
         require('./cruip-simple-preset.cjs'),
         require('./flex-preset.cjs'),
+        require('./src/shuffle/pstls/tailwind.config.js')
     ],
     corePlugins: {},
     plugins: [],

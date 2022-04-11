@@ -1,0 +1,17 @@
+---
+let {heroText} = Astro.props
+let {textFirst, textSecond, textThird, subText, buttonText} = {...heroText}
+---
+<div class="w-full lg:w-5/12 flex items-center">
+  <div class="max-w-lg mx-auto">
+    <h1 class="text-5xl lg:text-6xl font-heading mb-6">
+      <span>{textFirst}</span>
+      <span class="text-indigo-200">{textSecond}</span>
+      <span>{textThird}</span>
+    </h1>
+    <p class="leading-8 md:max-w-md xl:max-w-sm mb-6">{subText}</p>
+    { buttonText && 
+      <div class="ml-auto"><a class="inline-block w-full md:w-auto text-center px-8 py-3 text-white font-bold bg-black hover:bg-gray-900 transition duration-200" href="#">{buttonText}</a></div>
+    }
+  </div>
+</div>
