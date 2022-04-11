@@ -1,14 +1,14 @@
 ---
 let {tutorialList} = Astro.props;
-let {text, articles} = {...tutorialList}
-let allTags = [...new Set(articles.map(article => article.tags).flat().map(tag => tag?tag.text:""))].filter(tag => tag)
+let {articlesGrid} = {...tutorialList}
+let allTags = [...new Set(articlesGrid.articles.map(article => article.tags).flat().map(tag => tag?tag.text:""))].filter(tag => tag)
 ---
 
 <section class="relative">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="pt-32 pb-12 md:pt-40 md:pb-20">
             <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-                <h1 class="text-3xl font-bold">{text}</h1>
+                <h1 class="text-3xl font-bold">{articlesGrid.text}</h1>
             </div>
             {allTags.length > 0 &&
                 <div class="border-b border-gray-300 pb-4 mb-12">
@@ -28,7 +28,7 @@ let allTags = [...new Set(articles.map(article => article.tags).flat().map(tag =
             }
             <div class="max-w-sm mx-auto md:max-w-none">
                 <div class="grid gap-12 md:grid-cols-3 md:gap-x-6 md:gap-y-8 items-start">
-                    {articles.map(article => (
+                    {articlesGrid.articles.map(article => (
                         <article class="flex flex-col h-full" data-aos="zoom-y-out">
                             <header>
                                 <a class="block mb-6" href={article.href}>
