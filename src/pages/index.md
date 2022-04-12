@@ -2,6 +2,10 @@
 setup: |
   import TutorialsList from '../cruip-simple/components/tutorials-list.astro';
   import FeaturesBlocks from '../cruip-simple/components/features-blocks.astro';
+  import ZeusHeader1 from '../shuffle/zeus/headers/1/index.astro';
+  import ZospaceHeader1 from '../shuffle/zospace/headers/1/index.astro';
+  import BoldUIHeader1 from '../shuffle/boldUI/headers/1/index.astro';
+  import QuickmailHero from '../quickmail/home/index.astro';
 data:
   articlesGrid:
     text: "Demos"
@@ -37,6 +41,9 @@ data:
         text: "Headless CMS"
         subtext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 ---
-
-<TutorialsList tutorialList = {frontmatter.data}/>
+<!-- <TutorialsList tutorialList = {frontmatter.data}/>
 <FeaturesBlocks featuresBlocks = {frontmatter.data}/>
+<ZeusHeader1/>
+<ZospaceHeader1/>
+<QuickmailHero/> -->
+<BoldUIHeader1/>
