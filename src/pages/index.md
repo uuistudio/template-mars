@@ -16,6 +16,9 @@ data:
       -
         text: "Flex"
         href: "/flex/"
+      -
+        text: "Shuffle pstls"
+        href: "/shuffle/pstls/"        
   featuresGrid:
     text: "Explore the solutions"
     subtext: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
@@ -41,9 +44,9 @@ data:
         text: "Headless CMS"
         subtext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 ---
-<!-- <TutorialsList tutorialList = {frontmatter.data}/>
+<TutorialsList tutorialList = {frontmatter.data}/>
 <FeaturesBlocks featuresBlocks = {frontmatter.data}/>
 <ZeusHeader1/>
 <ZospaceHeader1/>
-<QuickmailHero/> -->
 <BoldUIHeader1/>
+<QuickmailHero/>
